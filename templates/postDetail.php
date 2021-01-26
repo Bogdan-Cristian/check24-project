@@ -63,19 +63,16 @@ $session = new \libs\ControlSession();
 </header>
 
 <div class="container">
-
-    <?php foreach($posts as $post): ?>
-
-    <div class="post-container col-12 px-2 py-1 mb-4" >
+    <div class="post-container col-12 px-2 py-1 mb-4" style="border:1px solid black; background-color:#9797ff;">
         <div class="top-bar d-flex">
             <span class="time mr-2">
              <?php
-                $date =  getdate($post['added_at']);
-                echo $date['mday'] . "." . $date['mon'] . "." . $date['year'];
+             $date =  getdate($post['added_at']);
+             echo $date['mday'] . "." . $date['mon'] . "." . $date['year'];
              ?>
             </span>
 
-            <a href="/postDetail?post_id=<?php echo $post['id']?>" class="post-title"><?php echo $post['title'] ?></a>
+            <span class="post-title"><?php echo $post['title'] ?></span>
         </div>
 
         <div class="main-container row" style="height: 250px">
@@ -96,11 +93,10 @@ $session = new \libs\ControlSession();
 
             <div class="post-img-wrapper col-3">
                 <img class="post-img" src="<?php echo $post['image_link'] ?>" alt="">
-<!--                <img class="post-img" src="https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">-->
+                <!--                <img class="post-img" src="https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">-->
             </div>
         </div>
     </div>
-    <?php endforeach; ?>
 </div>
 
 </body>

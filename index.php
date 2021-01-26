@@ -67,10 +67,13 @@ Route::add('/logout', function() {
 } );
 
 // Posts
+
+//Add Post Form
 Route::add('/addpost', function() {
     include("templates/addPost.php");
 }, 'get');
 
+// Add post API
 Route::add('/addpost', function() {
     include("libs/addPost.php");
     include('configs/db.php');
@@ -78,6 +81,26 @@ Route::add('/addpost', function() {
     $addPost = new \libs\addPost($conn);
     $addPost->addPost($_POST);
 }, 'post');
+
+// Post details
+Route::add('/postdetail', function() {
+    include('configs/db.php');
+
+    $sql = sprintf("SELECT * FROM posts WHERE id = '%d'", $_GET['post_id']);
+    $res = $conn->query($sql);
+    if($res)
+    {
+        $post = $res->fetch_assoc();
+    }
+
+    // Getting the Author Name
+    $sql = sprintf("SELECT first_name, last_name FROM user WHERE id = %d", $post['user_id']);
+    $creator = $conn->query($sql)->fetch_assoc();
+    $post['first_name'] = $creator['first_name'];
+    $post['last_name'] = $creator['last_name'];
+
+    include("templates/postDetail.php");
+}, 'get');
 
 // Run the router
 Route::run('/');

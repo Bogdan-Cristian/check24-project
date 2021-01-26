@@ -32,3 +32,8 @@
     height: 100%;
     object-fit: cover;
 }
+
+.post-container{
+    border:1px solid black;
+    background-color:#9797ff;
+}
