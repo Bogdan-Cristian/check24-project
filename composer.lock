@@ -1,0 +1,62 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3b78250dba9bfc6cc7b9208b529dc820",
+    "packages": [
+        {
+            "name": "steampixel/simple-php-router",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/steampixel/simplePHPRouter.git",
+                "reference": "02d75226dce028b624e8a16a990ddeb24c70cbe8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/steampixel/simplePHPRouter/zipball/02d75226dce028b624e8a16a990ddeb24c70cbe8",
+                "reference": "02d75226dce028b624e8a16a990ddeb24c70cbe8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Steampixel": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Stitz",
+                    "email": "info@steampixel.de",
+                    "homepage": "https://steampixel.de/"
+                },
+                {
+                    "name": "Maximilian Götz",
+                    "email": "contact@maxbits.net",
+                    "homepage": "https://www.maxbits.net/"
+                }
+            ],
+            "description": "This is a simple and small PHP router that can handel the whole url routing for your project.",
+            "support": {
+                "issues": "https://github.com/steampixel/simplePHPRouter/issues",
+                "source": "https://github.com/steampixel/simplePHPRouter/tree/0.5.1"
+            },
+            "time": "2021-01-14T19:46:14+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
