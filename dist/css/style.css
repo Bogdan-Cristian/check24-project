@@ -1,0 +1,22 @@
+.blog-logo{
+    padding: 20px;
+    background:gray;
+    color:black;
+
+}
+
+/*Nav*/
+.nav-list{
+    list-style-type:none ;
+}
+
+.nav-list .nav-link {
+    padding:20px;
+}
+
+.btn{
+    /*padding:10px 20px;*/
+    /*background:black;*/
+    /*color:white;*/
+    text-decoration: none;
+}
