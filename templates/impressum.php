@@ -62,7 +62,14 @@ $session = new \libs\ControlSession();
 </header>
 
 
-<h1>Impressum</h1>
+<div class="container bg-blue p-4">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nostrum, numquam! Consequuntur dolor molestias nam necessitatibus rerum tempora voluptatem? Aspernatur corporis, deserunt, dolor ducimus ex explicabo in ipsa labore molestiae optio porro possimus quidem saepe, temporibus voluptates. Accusamus, aliquid, amet doloribus ducimus, hic quis quod recusandae sunt temporibus voluptas voluptates?</p>
+    <div class="impressum-info">
+        <h2 class="Impressum-owner mb-0"><b>Bogdan Ciumac</b></h2>
+        <h3 class="owner-info mt-0 ">Lorem ipsum 7</h3>
+        <h4 class="address"> Frankfurt 67625</h4>
+    </div>
+</div>
 
 </body>
 </html>

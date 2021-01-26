@@ -65,17 +65,19 @@ $session = new \libs\ControlSession();
 <div class="container">
     <form action="/login" method="POST">
         <div class="d-flex mb-4">
-
-            <label for="username">Username:</label>
-            <input type="text" name="username" required>
+            <label class="input-label col-2" for="username">Username:</label>
+            <input class="input col-6" type="text" name="username" required>
         </div>
 
         <div class="d-flex">
-            <label for="password">Password:</label>
-            <input type="text" name="password" required>
+            <label class="input-label col-2" for="password">Password:</label>
+            <input class="input col-6" type="text" name="password" required>
         </div>
 
-        <button type="submit"> Submit </button>
+        <div class="d-flex">
+            <label class="input-label col-2" for="password"></label>
+            <button type="submit" class="btn submit-btn"> Submit </button>
+        </div>
     </form>
 </div>
 </body>

@@ -68,23 +68,26 @@ if(!($session->isLogged()))
 
 <div class="container">
     <form action="/addpost" method="POST">
-        <div class=" mb-2">
-            <h3 for="username">* Titel:</h3>
-            <input type="text" name="title" required>
+        <div class="d-flex   mb-2">
+            <h3 class="input-label col-2" for="username">* Titel:</h3>
+            <input class="title input col-8" type="text" name="title" required>
         </div>
 
-        <div class="mb-2">
-            <h3 for="password">* Beschreibung:</h3>
-            <input type="text" name="description" required>
+        <div class="d-flex mb-2">
+            <h3 class="input-label col-2" for="password">* Beschreibung:</h3>
+            <input class="description input col-8" type="text" name="description" required>
         </div>
 
-        <div class="mb-2">
-            <h3 for="link">Image link</h3>
-            <input type="text" name="imageLink" required>
+        <div class="d-flex  mb-2">
+            <h3 class="input-label col-2" for="link">Image link</h3>
+            <input class="img input col-8" type="text" name="imageLink" required>
         </div>
 
+        <div class="d-flex">
+            <h3 class=" col-2" ></h3>
+            <button type="submit" class="btn submit-btn"> Submit </button>
+        </div>
 
-        <button type="submit"> Submit </button>
     </form>
 </div>
 </body>

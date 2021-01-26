@@ -16,14 +16,15 @@ use Steampixel\Route;
 Route::add('/', function() {
     include("configs/db.php");
 
+
     $sql = sprintf("SELECT * FROM posts");
+
     $res = $conn->query($sql);
 
-    $posts  = [];
-
+//  Itterating through mysql response and adding to $post array
+    $posts = [];
     while($row = $res->fetch_assoc())
     {
-
         $sql = sprintf("SELECT first_name, last_name FROM user WHERE id = %d", $row['user_id']);
         $creator = $conn->query($sql)->fetch_assoc();
         $customRow = (array) $row;
@@ -32,6 +33,7 @@ Route::add('/', function() {
 
         array_push($posts, $customRow);
     }
+
 
     include("templates/index.php");
 });
