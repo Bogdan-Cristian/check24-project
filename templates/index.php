@@ -62,7 +62,46 @@ $session = new \libs\ControlSession();
     </div>
 </header>
 
-<h1>index</h1>
+<div class="container">
+
+    <?php foreach($posts as $post): ?>
+
+    <div class="post-container col-12 px-2 py-1 mb-4" style="border:1px solid black; background-color:#9797ff;">
+        <div class="top-bar d-flex">
+            <span class="time mr-2">
+             <?php
+                $date =  getdate($post['added_at']);
+                echo $date['mday'] . "." . $date['mon'] . "." . $date['year'];
+             ?>
+            </span>
+
+            <span class="post-title"><?php echo $post['title'] ?></span>
+        </div>
+
+        <div class="main-container row" style="height: 250px">
+            <div class="content col-9 d-flex flex-column justify-content-between">
+                <div class="description">
+                    <p><?php echo $post["description"] ?></p>
+                </div>
+
+                <div class="post-info bottom-bar d-flex justify-content-between">
+                    <div class="post-author">
+                        Author: <?php echo $post['first_name'] . " " . $post['last_name']?>
+                    </div>
+                    <div class="post-comments">
+                        Kommentare: 2
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-img-wrapper col-3">
+                <img class="post-img" src="<?php echo $post['image_link'] ?>" alt="">
+<!--                <img class="post-img" src="https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">-->
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>
 
 </body>
 </html>

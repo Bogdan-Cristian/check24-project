@@ -14,6 +14,25 @@ use Steampixel\Route;
 
 // Index Page
 Route::add('/', function() {
+    include("configs/db.php");
+
+    $sql = sprintf("SELECT * FROM posts");
+    $res = $conn->query($sql);
+
+    $posts  = [];
+
+    while($row = $res->fetch_assoc())
+    {
+
+        $sql = sprintf("SELECT first_name, last_name FROM user WHERE id = %d", $row['user_id']);
+        $creator = $conn->query($sql)->fetch_assoc();
+        $customRow = (array) $row;
+        $customRow['first_name'] = $creator['first_name'];
+        $customRow['last_name'] = $creator['last_name'];
+
+        array_push($posts, $customRow);
+    }
+
     include("templates/index.php");
 });
 
@@ -35,21 +54,30 @@ Route::add('/login', function() {
     include('libs/login.php');
     include('configs/db.php');
 
-    $login = new \libs\login("", $conn);
+    $login = new \libs\login($conn);
     $login->login($_POST);
 
 }, 'post');
 
 //Logout
 Route::add('/logout', function() {
-    $_SESSION["logged"] = false;
+    session_destroy();
+
     header("Location: /");
 } );
 
-// Add Post
+// Posts
 Route::add('/addpost', function() {
     include("templates/addPost.php");
-});
+}, 'get');
+
+Route::add('/addpost', function() {
+    include("libs/addPost.php");
+    include('configs/db.php');
+
+    $addPost = new \libs\addPost($conn);
+    $addPost->addPost($_POST);
+}, 'post');
 
 // Run the router
 Route::run('/');

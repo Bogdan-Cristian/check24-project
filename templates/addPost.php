@@ -3,6 +3,10 @@
 
 $session = new \libs\ControlSession();
 
+if(!($session->isLogged()))
+{
+    header("Location: /");
+}
 
 ?>
 
@@ -63,18 +67,22 @@ $session = new \libs\ControlSession();
 </header>
 
 <div class="container">
-    <form action="/login" method="POST">
-        <div class="d-flex mb-4">
-
-
-            <label for="username">Username:</label>
-            <input type="text" name="username" required>
+    <form action="/addpost" method="POST">
+        <div class=" mb-2">
+            <h3 for="username">* Titel:</h3>
+            <input type="text" name="title" required>
         </div>
 
-        <div class="d-flex">
-            <label for="password">Password:</label>
-            <input type="text" name="password" required>
+        <div class="mb-2">
+            <h3 for="password">* Beschreibung:</h3>
+            <input type="text" name="description" required>
         </div>
+
+        <div class="mb-2">
+            <h3 for="link">Image link</h3>
+            <input type="text" name="imageLink" required>
+        </div>
+
 
         <button type="submit"> Submit </button>
     </form>
